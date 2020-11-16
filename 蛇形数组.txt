@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int a,b,n,max;
+	cin>>n;
+	max=(n+1)*n/2;
+	a=1;
+	for(int t=0;t<n;t++){
+		a=a+t;
+		b=a;
+		for(int i=0;i<n;i++){
+			if(b<=max){
+		cout<<b<<" ";
+		b=b+i+2+t;
+		}
+		}	
+	cout<<endl;
+	}
+	return 0;
+}
