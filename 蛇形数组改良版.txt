@@ -1,0 +1,21 @@
+//蛇形数组数学法（改良版）
+//本版本相对于上版本：加强逻辑，防止溢出 ，更容易理解（也许？） 
+#include<iostream>
+using namespace std;
+int main(){
+	int a,b,c,n;
+	cin>>n;
+	c=n;
+	a=1;
+	for(int t=0;t<n;t++){
+		a=a+t;
+		b=a; 
+		for(int i=0;i<c;i++){
+		cout<<b<<" ";
+		b=b+i+2+t;
+		}
+	cout<<endl;
+	c--;
+	}
+	return 0;
+}
