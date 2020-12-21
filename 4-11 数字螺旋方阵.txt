@@ -1,0 +1,55 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main() {
+	int T;
+	cin>>T;
+	for(int z=1; z<=T; z++) {
+		int n;
+		cin>>n;
+		int i,j;
+		int nex=n/2,ney=n/2,max=n*n,p[n][n]={0},x=1,cnt=1,turn=0;
+		p[ney][nex]=x;
+		x++;
+		while(x<=max) {
+			turn=(turn+1)%4;
+			cnt++;
+			if(turn==0) {
+				for(i=1; i<=cnt/2; i++) {
+					ney=ney-1;
+					p[ney][nex]=x;
+					x++;
+				}
+			}
+			if(turn==1) {
+				for(i=1; i<=cnt/2; i++) {
+					nex=nex-1;
+					p[ney][nex]=x;
+					x++;
+				}
+			}
+			if(turn==2) {
+				for(i=1; i<=cnt/2; i++) {
+					ney=ney+1;
+					p[ney][nex]=x;
+					x++;
+				}
+			}
+			if(turn==3) {
+				for(i=1; i<=cnt/2; i++) {
+					nex=nex+1;
+					p[ney][nex]=x;
+					x++;
+				}
+			}
+		}
+		
+		for(i=0;i<n;i++){
+				for(j=0;j<n;j++){
+					cout<<setw(4)<<p[i][j];
+				}
+				cout<<endl;
+			}
+	}
+	return 0;
+}
